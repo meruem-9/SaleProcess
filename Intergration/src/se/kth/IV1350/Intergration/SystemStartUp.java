@@ -37,7 +37,7 @@ public class SystemStartUp {
      */
 
     public InventorySystem getInventorySystem(){
-        return getInventorySystem();
+        return inventorySystem;
     }
 
 

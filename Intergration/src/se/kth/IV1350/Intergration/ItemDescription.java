@@ -2,6 +2,8 @@ package se.kth.IV1350.Intergration;
 
 import se.kth.IV1350.Model.Amount;
 
+import java.util.Objects;
+
 public class ItemDescription {
 
     private final Amount price;
@@ -45,5 +47,40 @@ public class ItemDescription {
      */
     public Amount getVAT() {
         return VAT;
+    }
+    @Override
+    public String toString() {
+        String builder = "item name: " + itemName + "\t" +
+                "price: " + price + "\t" +
+                "VAT: " + VAT + "\t";
+        return builder;
+    }
+
+    /**
+     * Two <code>ItemDTO</code> instances are equal if all fields are equal.
+     *
+     * @param obj The <code>ItemDTO</code> to compare with this <code>ItemDTO</code>.
+     * @return <code>true</code> if all fields in the specified <code>ItemDTO</code> are equal to
+     *         corresponding fields in this <code>ItemDTO</code>, <code>false</code> if they are not.
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null){
+            return false;
+        }
+        if (getClass() != obj.getClass()){
+            return false;
+        }
+        final ItemDescription other = (ItemDescription) obj;
+        if (!Objects.equals(this.price, other.price)){
+            return false;
+        }
+        if (!this.itemName.equals(other.itemName)){
+            return false;
+        }
+        if (!Objects.equals(this.VAT, other.VAT)){
+            return false;
+        }
+        return true;
     }
 }

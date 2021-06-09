@@ -34,9 +34,9 @@ public class ItemInventory {
 
     private void addItems(){
 
-        itemList.put("T-shirt", new ItemDescription(new Amount(199), "T-shirt", new Amount(199)));
-        itemList.put("Jeans", new ItemDescription(new Amount(450), "Jeans", new Amount(450)));
-        itemList.put("Shoes", new ItemDescription(new Amount(500), "Shoes", new Amount(500)));
+        itemList.put("T-shirt", new ItemDescription(new Amount(200), "T-shirt", new Amount(20)));
+        itemList.put("Jeans", new ItemDescription(new Amount(450), "Jeans", new Amount(30)));
+        itemList.put("Shoes", new ItemDescription(new Amount(500), "Shoes", new Amount(20)));
 
     }
 
@@ -51,16 +51,6 @@ public class ItemInventory {
         return itemList.containsKey(itemIdentifier);
     }
 
-  /*  public Item getItemFromItemInventory(String itemID)
-            throws ItemNotInRegisterException, InventoryDataFailureException{
-        ItemIdentifier ID = new ItemIdentifier(itemID);
-        if(ID.equals("something")){
-                throw new InventoryDataFailureException("Item data failure");
-            }if(itemList.containsKey(itemID)){
-                return itemList.get(itemID);
-            }else{
-                throw new ItemNotInRegisterException(itemID);}
-        } */
 
 
 }

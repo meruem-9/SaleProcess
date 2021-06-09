@@ -50,9 +50,9 @@ public class InventorySystem {
     }
 
     private void addItems() {
-        itemList.put("T-shirt", new Item(new ItemDescription(new Amount(199), "T-shirt", new Amount(199)), "T-shirt", new Amount(Integer.MAX_VALUE)));
-        itemList.put("Jeans", new Item(new ItemDescription(new Amount(450), "Jeans", new Amount(450)), "Jeans", new Amount(Integer.MAX_VALUE)));
-        itemList.put("Shoes", new Item(new ItemDescription(new Amount(500), "Shoes", new Amount(500)), "Shoes", new Amount(Integer.MAX_VALUE)));
+        itemList.put("T-shirt", new Item(new ItemDescription(new Amount(200), "T-shirt", new Amount(20)), "T-shirt", new Amount(Integer.MAX_VALUE)));
+        itemList.put("Jeans", new Item(new ItemDescription(new Amount(450), "Jeans", new Amount(30)), "Jeans", new Amount(Integer.MAX_VALUE)));
+        itemList.put("Shoes", new Item(new ItemDescription(new Amount(500), "Shoes", new Amount(20)), "Shoes", new Amount(Integer.MAX_VALUE)));
     }
 
 }

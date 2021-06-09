@@ -41,7 +41,7 @@ public class Controller{
         /**
          * Start new sale
          */
-        public void iniateSale(){
+        public void initiateSale(){
             this.sale = new Sale();
         }
 

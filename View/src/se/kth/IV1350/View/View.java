@@ -25,19 +25,20 @@ public class View {
 
     public void pseudoImplementation(){
 
-        System.out.println("Welcome,\n Start new purchase");
-        controller.iniateSale();
-        System.out.println("Pick items");
-        String out = controller.registerNewItem("Spinach", new Amount(20));
+        System.out.println("Welcome,\nStart new purchase");
+        controller.initiateSale();
+        System.out.println("Choose items");
+        String out = controller.registerNewItem("T-shirt", new Amount(10));
         System.out.println(out);
-        out = controller.registerNewItem("Corn", new Amount(15));
+        out = controller.registerNewItem("Jeans", new Amount(10));
         System.out.println(out);
-        out = controller.registerNewItem("Basil", new Amount(15));
+        out = controller.registerNewItem("Shoes", new Amount(10));
+        System.out.println(out);
         System.out.println("Total bill including VAT");
         out = controller.displayTotalBillIncludingVAT();
         System.out.println(out);
-        System.out.println("Payed amount");
-        out = controller.pay(new Amount(200));
+        System.out.println("Paid amount");
+        out = controller.pay(new Amount(20000));
         System.out.println(out);
     }
 }

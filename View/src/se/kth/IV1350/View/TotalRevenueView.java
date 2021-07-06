@@ -7,7 +7,7 @@ import se.kth.IV1350.Model.*;
  * amount that has been paid
  */
 
-public class TotalRevenueView {
+public class TotalRevenueView implements SaleObserver {
 
     private Amount totalRevenue;
 
@@ -39,6 +39,11 @@ public class TotalRevenueView {
 
         totalRevenue = totalRevenue.add(amount);
 
+    }
+
+    @Override
+    public void newPayment(Amount amount){
+        addNewPayment(amount);
     }
 
 

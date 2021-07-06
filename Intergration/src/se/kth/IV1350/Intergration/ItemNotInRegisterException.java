@@ -28,7 +28,7 @@ public class ItemNotInRegisterException extends Exception {
      */
 
     public String getItemNotIdentified(){
-        return this.itemNotIdentified;
+        return itemNotIdentified;
     }
 
 

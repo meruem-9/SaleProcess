@@ -117,6 +117,10 @@ public class Sale {
         return (Item) mapping.getValue();
     }
 
+    public void addSaleObservers(List<SaleObserver> observers){
+        saleObservers.addAll(observers);
+    }
+
     private void addNewLine(StringBuilder builder, String line) {
         builder.append(line);
         builder.append("\n");

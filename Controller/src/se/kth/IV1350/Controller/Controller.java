@@ -3,6 +3,9 @@ package se.kth.IV1350.Controller;
 import se.kth.IV1350.Model.*;
 import se.kth.IV1350.Intergration.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * The controller is the where the POS applications calls are all made
@@ -19,6 +22,7 @@ public class Controller{
     private EmployDiscount employDiscount;
     private InventorySystem inventorySystem;
     private AccountingSystem accountingSystem;
+    private List<SaleObserver> saleObservers = new ArrayList<>();
 
 
     /**
@@ -43,6 +47,7 @@ public class Controller{
          */
         public void initiateSale(){
             this.sale = new Sale();
+            sale.addSaleObservers(saleObservers);
         }
 
         /**
@@ -94,6 +99,10 @@ public class Controller{
             printer.printReceipt(receipt);
             sale = null;
             return "Change : " + cost.getChange().toString();
+        }
+
+        public void addSaleObserver(SaleObserver saleObserver){
+            saleObservers.add(saleObserver);
         }
 
 

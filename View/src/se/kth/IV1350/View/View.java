@@ -51,10 +51,10 @@ public class View {
             System.out.println("Paid amount");
             out = controller.pay(new Amount(20000));
             System.out.println(out);
-        }catch(Exception exception){
-            errorMessageHandler.displayErrorMessage(exception.getMessage());
-            logHandler.logException(exception);
-            System.err.println("Item not in register");
+        }catch(ItemNotInRegisterException exception){
+            System.out.println("Unidentified item " + exception.getItemNotIdentified());
+        }catch(FailedOperationException exception){
+            manageExceptions("Item not registered", exception);
         }
     }
 

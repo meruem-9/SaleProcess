@@ -24,11 +24,16 @@ public class ItemInventory {
      * @return null
      */
 
-    public Item getItem(String itemIdentifier, Amount quantity){
-        if(foundItem(itemIdentifier)) {
-            return new Item(itemList.get(itemIdentifier), itemIdentifier, quantity);
-        }
-        return null;
+    public Item getItem(String itemIdentifier, Amount quantity)
+        throws ItemNotInRegisterException, InventoryDataFailureException {
+            if (itemIdentifier.equals("leaf")) {
+                throw new InventoryDataFailureException("Failure in the database");
+            }
+            if (foundItem(itemIdentifier)) {
+                return new Item(itemList.get(itemIdentifier), itemIdentifier, quantity);
+            }
+            throw new ItemNotInRegisterException(itemIdentifier);
+
     }
 
 

@@ -44,6 +44,7 @@ public class TotalRevenueView implements SaleObserver {
     @Override
     public void newPayment(Amount amount){
         addNewPayment(amount);
+        printCurrentRevenue();
     }
 
 

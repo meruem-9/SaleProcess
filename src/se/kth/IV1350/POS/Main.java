@@ -26,7 +26,7 @@ public class Main {
             View view = new View(controller);
             view.pseudoImplementation();
 
-        }catch (Exception exception){
+        }catch (IOException exception){
             System.out.println("System failed to start.");
         }
 

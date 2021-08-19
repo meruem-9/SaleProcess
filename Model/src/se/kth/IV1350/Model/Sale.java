@@ -58,12 +58,14 @@ public class Sale {
         existingItem.increaseQuantity(item.getQuantity());
         items.put(existingItem.getItemIdentifier(), existingItem);
         totalBill.reviseTotalBill(item);
+        informObserver();
     }
 
 
     private void addItemAndReviseTotalBill(Item item) {
         items.put(item.getItemIdentifier(), item);
         totalBill.reviseTotalBill(item);
+        informObserver();
     }
 
 
@@ -82,13 +84,9 @@ public class Sale {
     }
 
     private void informObserver() {
-        for (SaleObserver observer : this.saleObservers) {
+        for (SaleObserver observer : saleObservers) {
             observer.newPayment(totalBill.getTotalBill());
         }
-    }
-
-    public void appendObserver(SaleObserver observer) {
-        this.saleObservers.add(observer);
     }
 
     @Override

@@ -57,12 +57,18 @@ public class Controller{
          * @returns the current bill of the current sale
          */
 
-        public String registerNewItem(String itemIdentifier, Amount quantity){
-            if(itemInventory.foundItem(itemIdentifier)){
-                Item item = itemInventory.getItem(itemIdentifier, quantity);
-                return sale.findItem(item) + ", quantity" + quantity.toString();
+        public String registerNewItem(String itemIdentifier, Amount quantity)
+                throws ItemNotInRegisterException, FailedOperationException {
+            try {
+                if (itemInventory.foundItem(itemIdentifier)) {
+                    Item item = itemInventory.getItem(itemIdentifier, quantity);
+                    return sale.findItem(item) + ", quantity" + quantity.toString();
+                }}catch(InventoryDataFailureException dbFailure){
+                throw new FailedOperationException("Failure to connect with the inventory", dbFailure);
+
             }
-        return "Current bill " + displayTotalBill();
+                return "Current bill " + displayTotalBill();
+
 
         }
 
